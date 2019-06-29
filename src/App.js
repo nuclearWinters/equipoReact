@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './App.css';
 import Botones from "./componentes/botones"
+import { ComponenteFuncional, ComponenteDeClase } from "./componentes/mostrarNombre"
 
 class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
       nombres: [],
-      turno: 0
+      turno: 0,
+      edad: 25
     }
     this.cambiarTurno = this.cambiarTurno.bind(this)
   }
@@ -43,6 +45,8 @@ class App extends Component {
             <div>hola!</div>
           </div>
         )}
+        <ComponenteFuncional />
+        <ComponenteDeClase />
       </div>
     );
   }
