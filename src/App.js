@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Botones from "./componentes/botones"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      turno: 0
+    }
+    this.cambiarTurno = this.cambiarTurno.bind(this)
+  }
+
+  cambiarTurno = (numero) => {
+    this.setState({turno: this.state.turno + numero})
+  }
+
+  render () {
+    return (
+      <div style={{alignItems: "center", display: "flex", flexDirection: "column" }}>
+        <div>{this.state.turno}</div>
+        <Botones nombre = "Armando" />
+      </div>
+    );
+  }
 }
 
 export default App;
+
+/*https://github.com/nuclearWinters/equipoReact*/
