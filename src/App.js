@@ -16,10 +16,12 @@ class App extends Component {
   }
 
   render () {
+    console.log("Props App ", this.props)
+    console.log("State App", this.state)
     return (
       <div style={{alignItems: "center", display: "flex", flexDirection: "column" }}>
         <div>{this.state.turno}</div>
-        <Botones nombre = "Armando" />
+        <Botones nombre="Armando" funcionTurno = {this.cambiarTurno.bind(this)} />
       </div>
     );
   }
